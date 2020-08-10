@@ -17,11 +17,11 @@ const commentRoutes  = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
 
 //Connect to Mongo Database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Haaris:m8EIeIEjOfmbrVWK@cluster0.fqhwv.mongodb.net/yelpcamp?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Haaris:m8EIeIEjOfmbrVWK@cluster0.fqhwv.mongodb.net/yelpcamp?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then(() => console.log('Connected to DB!'))
+.then(() => console.log('Connected to mongoDB Atlas!'))
 .catch(error => console.log(error.message));
 
 app.use(bodyParser.urlencoded({extended: true}));
