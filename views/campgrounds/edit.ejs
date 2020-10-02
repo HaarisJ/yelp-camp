@@ -17,6 +17,9 @@
                     <input class="form-control" type="number" step="any" min="0" placeholder="Price/night" name="campground[price]" value="<%= campground.price %>">
                 </div>
                 <div class="form-group">
+                    <input class="form-control" type="number" step="any" min="1" max="5" placeholder="Rating" name="campground[rating]">
+                </div>
+                <div class="form-group">
                     <input class="form-control" type="text" placeholder="Description" name="campground[description]" value="<%= campground.description %>">
                 </div>
                 <div class="form-group">

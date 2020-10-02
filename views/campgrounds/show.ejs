@@ -15,6 +15,15 @@
                 <div class="caption">
                     <h4 class="pull-right">$<%= campground.price %>/night</h4>
                     <h1><a href=""><%= campground.name %></a></h1>
+                    <div class="rating">
+                        <% for(i=0; i<campground.rating; i++){ %>
+                            <i class="fas fa-star fa-lg filled"></i>
+                        <% } %>
+                        <% for(i=0; i<(5-campground.rating); i++){ %>
+                            <i class="fas fa-star fa-lg empty"></i>
+                        <% } %>
+                    </div>
+
                     <p><%= campground.description %></p>
                     <p>
                        <em>Submitted by <%= campground.author.username %></em>

@@ -10,3 +10,16 @@
 .delete-form {
     display: inline;
 }
+
+.fas.filled {
+    color: lightgreen;
+}
+
+.fas.empty {
+    color: gray;
+}
+
+.rating {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
