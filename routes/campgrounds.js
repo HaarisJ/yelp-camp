@@ -28,6 +28,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
   const desc = req.body.description;
   const price = req.body.price;
   const rating = req.body.rating;
+  const location = { lat: req.body.lat, long: req.body.long };
   const author = {
     id: req.user._id,
     username: req.user.username,
@@ -39,6 +40,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
     author: author,
     price: price,
     rating: rating,
+    location: location,
   };
   //Create a new campground and save to DB
   Campground.create(newCampground, (err, newlyCreated) => {

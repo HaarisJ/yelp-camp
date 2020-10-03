@@ -8,7 +8,17 @@
                 <li class="list-group-item">Info 2</li>
                 <li class="list-group-item">Info 3</li>
             </div>
+
+            <div class="thumbnail map">
+                <div class="caption">
+                    <p class="h4">Location</p>
+                </div>
+                <div id="map">
+
+                </div>
+            </div>
         </div>
+
         <div class="col-md-9">
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= campground.image %>" alt="">
@@ -23,7 +33,6 @@
                             <i class="fas fa-star fa-lg empty"></i>
                         <% } %>
                     </div>
-
                     <p><%= campground.description %></p>
                     <p>
                        <em>Submitted by <%= campground.author.username %></em>
@@ -63,7 +72,22 @@
             </div>
         </div>
     </div>
-    
-        
 </div>
+
+<script>
+    function initMap() {
+    let uluru = {lat: <%= campground.location.lat %>, lng: <%= campground.location.long %>};
+    // The map, centered at Uluru
+    let map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+    let marker = new google.maps.Marker({position: uluru, map: map});
+}
+</script>
+
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7dSMusXUO-YocFFQkudm58hVFQZV071E&callback=initMap">
+</script>
+
+
 <%- include("../partials/footer") %>
